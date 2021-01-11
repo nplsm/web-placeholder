@@ -1,0 +1,42 @@
+body {
+  background-color: #f8f8f8;
+  margin: 0rem 2rem;
+  padding: 0rem;
+}
+
+img {
+  display: block;
+  margin: 12rem auto 4rem auto;
+  padding: 0rem;
+  max-width: 8rem;
+}
+
+svg {
+  width: 2rem;
+  margin: 0.2rem;
+  padding: 0rem;
+}
+
+/* svg:hover {
+  fill: red;
+}
+
+svg:active {
+  fill: green;
+} */
+
+ul {
+  display: flex;
+  margin: 0rem;
+  padding: 0rem;
+  justify-content: center;
+  list-style: none;
+}
+
+p {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 2rem;
+  margin: 0.5rem;
+  padding: 0rem;
+}
