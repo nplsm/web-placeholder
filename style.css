@@ -15,7 +15,7 @@ div {
 
 img {
   display: block;
-  margin: 2rem auto;
+  margin: 0rem auto 2rem auto;
   padding: 0rem;
   max-width: 8rem;
   animation: rotation 15s infinite linear;
@@ -43,7 +43,7 @@ svg:active {
 
 ul {
   display: flex;
-  margin: 0rem;
+  margin: 0.5rem 0rem 0rem 0rem;
   padding: 0rem;
   justify-content: center;
   list-style: none;

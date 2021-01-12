@@ -1,0 +1,22 @@
+{
+  "name": "web-placeholder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nplsm/web-placeholder.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nplsm/web-placeholder/issues"
+  },
+  "homepage": "https://github.com/nplsm/web-placeholder#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

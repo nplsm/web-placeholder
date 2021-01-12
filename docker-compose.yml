@@ -1,0 +1,31 @@
+services:
+  proxy:
+    image: traefik:latest
+    ports:
+      - 80:80
+      - 443:443
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      #- "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.letsencrypt.acme.email=pavel@neoplasm.xyz"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+    volumes:
+      - ./letsencrypt:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  web:
+    build: .
+    command: npm run start
+    ports:
+      - 3000:3000
+    labels:
+      - "traefik.http.routers.web.rule=(Host(`neoplasm.xyz`) || Host(`www.neoplasm.xyz`) || Host(`nplsm.xyz`) || Host(`www.nplsm.xyz`))"
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
+      - "traefik.http.middlewares.foo-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.foo-redirectscheme.redirectscheme.permanent=true"
