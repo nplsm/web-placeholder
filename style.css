@@ -9,34 +9,51 @@ img {
   margin: 12rem auto 4rem auto;
   padding: 0rem;
   max-width: 8rem;
+  animation: rotation 15s infinite linear;
 }
+
 
 svg {
   width: 2rem;
+  height: 2rem;
   margin: 0.2rem;
   padding: 0rem;
+  fill: #000000;
+  opacity: 0.8;
 }
 
-/* svg:hover {
-  fill: red;
+svg:hover {
+  opacity: 0.3;
+  transform: scale(1.1);
+  transition: opacity .2s, transform .1s ease-in-out;
 }
 
 svg:active {
-  fill: green;
-} */
+  fill: #000b6b;
+  opacity: 1;
+}
 
 ul {
   display: flex;
   margin: 0rem;
-  padding: 0rem;
+  padding: 1rem;
   justify-content: center;
   list-style: none;
 }
 
 p {
   text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: HelveticaNeue-Thin, Helvetica, sans-serif;
   font-size: 2rem;
   margin: 0.5rem;
   padding: 0rem;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
