@@ -12,7 +12,6 @@ img {
   animation: rotation 15s infinite linear;
 }
 
-
 svg {
   width: 2rem;
   height: 2rem;
@@ -25,7 +24,7 @@ svg {
 svg:hover {
   opacity: 0.3;
   transform: scale(1.1);
-  transition: opacity .2s, transform .1s ease-in-out;
+  transition: opacity 0.2s, transform 0.1s ease-in-out;
 }
 
 svg:active {
