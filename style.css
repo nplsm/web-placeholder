@@ -1,12 +1,21 @@
 body {
   background-color: #f8f8f8;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+div {
   margin: 0rem 2rem;
   padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
 img {
   display: block;
-  margin: 12rem auto 4rem auto;
+  margin: 2rem auto;
   padding: 0rem;
   max-width: 8rem;
   animation: rotation 15s infinite linear;
@@ -35,7 +44,7 @@ svg:active {
 ul {
   display: flex;
   margin: 0rem;
-  padding: 1rem;
+  padding: 0rem;
   justify-content: center;
   list-style: none;
 }
@@ -44,7 +53,7 @@ p {
   text-align: center;
   font-family: HelveticaNeue-Thin, Helvetica, sans-serif;
   font-size: 2rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0rem;
   padding: 0rem;
 }
 
