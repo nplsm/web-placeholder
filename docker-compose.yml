@@ -6,7 +6,6 @@ services:
       - 443:443
     command:
       - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
