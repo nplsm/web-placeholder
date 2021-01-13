@@ -4,7 +4,7 @@ body {
   padding: 0rem;
 }
 
-div {
+.main {
   margin: 0rem 2rem;
   padding: 0rem;
   display: flex;
@@ -20,19 +20,20 @@ img {
   padding: 0rem;
   max-width: 8rem;
   animation: rotation 15s infinite linear;
+  pointer-events: none;
 }
 
 svg {
   width: 2rem;
   height: 2rem;
-  margin: 0.2rem;
-  padding: 0rem;
+  margin: 0rem;
+  padding: 0.2rem;
   fill: #000000;
   opacity: 0.8;
 }
 
 svg:hover {
-  opacity: 0.3;
+  opacity: 1;
   transform: scale(1.1);
   transition: opacity 0.2s, transform 0.1s ease-in-out;
 }
@@ -44,11 +45,25 @@ svg:active {
 
 ul {
   display: flex;
-  margin: 0.5rem 0rem 0rem 0rem;
+  margin: 0.5rem 0rem 2rem 0rem;
   padding: 0rem;
   justify-content: center;
   list-style: none;
 }
+
+.mail a {
+  font-family: HelveticaNeue-Thin, sans-serif;
+  font-size: 1rem;
+  color: black;
+  opacity: 0.8;
+}
+
+.mail {
+  text-align: center;
+  margin: 0.1rem;
+  padding: 0rem;
+}
+
 
 p {
   text-align: center;
