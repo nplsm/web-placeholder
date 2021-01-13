@@ -30,5 +30,5 @@ services:
       - traefik.http.middlewares.redirectscheme.redirectscheme.scheme=https
       - traefik.http.middlewares.redirectscheme.redirectscheme.permanent=true
       - traefik.http.middlewares.redirectregex.redirectregex.regex=^https://(www.|)(neoplasm|nplsm)\.xyz(/*)
-      - traefik.http.middlewares.redirectregex.redirectregex.replacement=https://neoplasm.xyz${3}
+      - traefik.http.middlewares.redirectregex.redirectregex.replacement=https://neoplasm.xyz$${3}
       - traefik.http.middlewares.redirectregex.redirectscheme.permanent=true
