@@ -11,6 +11,7 @@ div {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  height: -webkit-fill-available;
 }
 
 img {
