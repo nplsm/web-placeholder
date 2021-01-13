@@ -27,9 +27,10 @@ services:
       - 3000:3000
     labels:
       - traefik.enable=true
-      - traefik.http.routers.web.rule=Host(`neoplasm.xyz`) || Host(`www.neoplasm.xyz`) || Host(`nplsm.xyz`) || Host(`www.nplsm.xyz`)
-      - traefik.http.routers.web.entrypoints=websecure
-      - traefik.http.routers.web.tls.certresolver=letsencrypt
-      - traefik.http.middlewares.redirectregex.redirectregex.regex=^https?://(www.|)(neoplasm|nplsm)\.xyz(/*)
-      - traefik.http.middlewares.redirectregex.redirectregex.replacement=https://neoplasm.xyz$${3}
-      - traefik.http.middlewares.redirectregex.redirectscheme.permanent=true
+      - traefik.http.routers.router.rule=Host(`neoplasm.xyz`) || Host(`www.neoplasm.xyz`) || Host(`nplsm.xyz`) || Host(`www.nplsm.xyz`)
+      - traefik.http.routers.router.entrypoints=websecure
+      - traefik.http.routers.router.tls.certresolver=letsencrypt
+      - traefik.http.middlewares.redirect.redirectregex.regex=^https?://(www\.|)(neoplasm|nplsm)\.xyz(/*)
+      - traefik.http.middlewares.redirect.redirectregex.replacement=https://neoplasm.xyz$${3}
+      - traefik.http.middlewares.redirect.redirectregex.permanent=true
+      - traefik.http.routers.router.middlewares=redirect
