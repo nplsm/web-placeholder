@@ -8,6 +8,9 @@ services:
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
       - --entrypoints.web.address=:80
+      - --entrypoints.web.http.redirections.entryPoint.to=websecure
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.letsencrypt.acme.httpchallenge=true
       - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
@@ -27,8 +30,6 @@ services:
       - traefik.http.routers.web.rule=Host(`neoplasm.xyz`) || Host(`www.neoplasm.xyz`) || Host(`nplsm.xyz`) || Host(`www.nplsm.xyz`)
       - traefik.http.routers.web.entrypoints=websecure
       - traefik.http.routers.web.tls.certresolver=letsencrypt
-      - traefik.http.middlewares.redirectscheme.redirectscheme.scheme=https
-      - traefik.http.middlewares.redirectscheme.redirectscheme.permanent=true
-      - traefik.http.middlewares.redirectregex.redirectregex.regex=^https://(www.|)(neoplasm|nplsm)\.xyz(/*)
+      - traefik.http.middlewares.redirectregex.redirectregex.regex=^https?://(www.|)(neoplasm|nplsm)\.xyz(/*)
       - traefik.http.middlewares.redirectregex.redirectregex.replacement=https://neoplasm.xyz$${3}
       - traefik.http.middlewares.redirectregex.redirectscheme.permanent=true
